@@ -11,9 +11,8 @@ class App extends React.Component{
   render(){
     return(
       <div>
-      Hello word width Dta
-      <MyComponent></MyComponent>
-    </div>
+        <MyComponent></MyComponent>
+      </div>
     )
 
   }
