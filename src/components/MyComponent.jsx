@@ -1,41 +1,35 @@
 import React from "react";
-import UserInfo from "./UserInfo";
 import DisplayInfo from "./DisplayInfo"
+import AddUser from "./AddUser";
 
 class MyComponent extends React.Component {
   state = {
-    name: "Tuan Anh",
-    address: "Ha Noi",
-    age: 18,
-  };
+    listUsers: [
+      {id: 1, name: 'Tuan Anh', age: 18},
+      {id: 2, name: 'Tuan Minh', age: 10},
+      {id: 3, name: 'Tuan Nam', age: 20},
+    ]
+  }
 
 
-  handleOnchangeInput = (event) => {
+
+  handleAddUser = (userObj) => {
     this.setState({
-        name: event.target.value,
-    });
-  };
-
-  handleOnchangeAge = (event) => {
-    this.setState({
-        age: event.target.value,
-    });
-  };
-
-  handleOnSubmit = (event) => {
-    event.preventDefault();
-    console.log(this.state);
-  };
+      listUsers: [userObj,...this.state.listUsers]
+      
+    })
+  }
+ 
 
   render() {
-    const myAge = 26;
+    
     return (
         <div>
-            <UserInfo/>
+            <AddUser handleAddUser={this.handleAddUser}/>
             <br/>
-            <DisplayInfo name="Tuan" age="22" />
-            <hr/>
-            <DisplayInfo name="Tuan A" age={myAge} />
+            <DisplayInfo listUsers={this.state.listUsers}/>
+          
+           
         </div>
     );
   }
