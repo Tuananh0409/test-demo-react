@@ -1,9 +1,20 @@
 .display-info-container{
+    display: flex;
+    flex-direction: column;
     .red {
-            color: red;
+        color: red;
         }
     
     .green {
         color: green;     
+    }
+
+    img{
+        width: 400px;
+        height: 400px;
+        align-self: center;
+    }
+    .hide-show-user{
+        width: 9%;
     }
 }
