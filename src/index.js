@@ -9,21 +9,20 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Admin from './components/Admin/Admin';
 import User from './components/User/User';
 import Homepage from './components/Homepage/Homepage';
+import Dashboard from './components/Admin/Content/Dashboard';
+import ManageUser from './components/Admin/Content/ManageUser';
+import Login from './components/Auth/Login';
+import Register from './components/Auth/Register';
+import Layout from './Layout';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
-   <React.StrictMode> 
+   {/* <React.StrictMode>  */}
     <BrowserRouter>
-      <Routes>
-        <Route path='' element={<App/>}>
-          <Route index element={< Homepage />}/>
-          <Route path='admin' element={< Admin />}/>
-          <Route path='user' element={<User/>}/>
-        </Route>
-      </Routes>
+     <Layout/>
     </BrowserRouter>
-    </React.StrictMode> 
+    {/* </React.StrictMode>  */}
   </Provider>
 );
 
